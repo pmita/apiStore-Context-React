@@ -1,0 +1,5 @@
+nav{
+    min-height: 10vh;
+    width: 100%;
+    @include flex(row, space-evenly, center);
+}

@@ -1,0 +1,18 @@
+//introducing functions and mixins
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//importing our variables
+@import './abstract/variables';
+@import './base/global';
+
+.App{
+    background: red;
+}
+
+//importing our components' styling
+@import './component/Navigation';
