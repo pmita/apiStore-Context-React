@@ -11,7 +11,8 @@
 @import './base/global';
 
 .App{
-    background: red;
+    min-height: 100vh;
+    width: 100%;
 }
 
 //importing our components' styling
