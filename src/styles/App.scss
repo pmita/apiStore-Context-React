@@ -17,3 +17,11 @@
 
 //importing our components' styling
 @import './component/Navigation';
+@import './component/ProductsContainer';
+@import './component/ProductItem';
+
+//miscelleneous styling
+@import './component/miscelleneous';
+
+//import our pages' styling
+@import './pages/Products';

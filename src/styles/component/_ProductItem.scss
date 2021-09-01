@@ -1,0 +1,59 @@
+
+.productItem{
+    @include flex(column, flex-start, center);
+    //below lines help to show/hide elements
+    position: relative;
+    overflow: hidden;
+    &:hover{
+        //Show items when hovering over the card
+        .actionBtn{
+            transform: translateY(0%);
+        }
+        .productItem--description{
+            transform: translateY(0%);
+            height: 100%;
+            width: 100%;
+            padding: 0.5rem;
+            background: $secondary-color;
+            @include flex(row, center, center);
+        }
+    }
+    img{
+        height: 90%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .productItem--details{
+        height: 10%;
+        width: 100%;
+        @include flex(row, space-between, center);
+        padding: 0.5rem;
+        background: rgba(216, 216, 216, 0.25);
+    }
+    //below two items have the show/hide functionality
+    .productItem--description{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: $transition;
+    }   
+    .actionBtn{
+        position: absolute;
+        top: 90%;
+        left: 0;
+        transform: translateY(100%);
+    }
+}
+
+.productItem--name,
+.productItem--price{
+    font-size: $h4;
+}
+
+.productItem--price{
+    font-weight: bold;
+}
+
+
+
