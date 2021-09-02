@@ -1,9 +1,12 @@
 import React from 'react';
+//import our components
+import CartContainer from '../components/CartContainer.js/CartContainer';
 
 const Cart = () => {
     return(
-        <div>
-            <h1>Hello from the cart page</h1>
+        <div className='cartPage'>
+            <h1>Here is your Cart</h1>
+            <CartContainer />
         </div>
     );
 }

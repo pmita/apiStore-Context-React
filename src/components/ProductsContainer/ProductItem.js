@@ -1,8 +1,30 @@
 import React from 'react';
 //import all our components
-import Button from '../Button';
+//import Button from '../Button';
 
-const ProductItem = ({name, price, desc, img}) => {
+const ProductItem = ({id, name, price, desc, img, isItemInCart, products, setProducts, cartItems, setCartItems}) => {
+    //define our event listers
+    const addItemHandler = () => {
+        //add clicked item on the cartItems state
+        setCartItems([...cartItems, {
+            name: name,
+            price: price,
+            amount: 1,
+            img: img,
+            id: id
+        }])
+
+        //update the itemOnBasket state for each product
+        const productsUpdated = products.map( productItem => {
+            if( productItem.id === id){
+                return {...productItem, isItemInCart: true};
+            } else {
+                return {...productItem};
+            }
+        });
+        setProducts(productsUpdated);
+    }
+
     return(
         <div className='productItem'>
             <img src={img} alt='our product to sell' />
@@ -13,10 +35,13 @@ const ProductItem = ({name, price, desc, img}) => {
 
             <p className='productItem--description'>{desc}</p>
 
-            <Button
-                btnClass={'btn actionBtn'}
-                btnText={'ADD TO CART'}
-            />
+        <button 
+            className='btn actionBtn'
+            disabled={isItemInCart}
+            onClick={addItemHandler}
+        >
+            {!isItemInCart ? 'ADD TO CART' : 'ITEM IN BASKET'}
+        </button>
         </div>
     );
 }

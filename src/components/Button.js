@@ -4,8 +4,17 @@ const Button = ({
     btnClass ='actionButton',
     btnText ='ADD TO CART'
 }) => {
+
+    //define our event handlers
+    const addItemHandler = (e) => {
+        console.log(e.target);
+    }
+
     return(
-        <button className={btnClass}>
+        <button 
+            className={btnClass}
+            onClick={addItemHandler}
+        >
             {btnText}
         </button>
     );

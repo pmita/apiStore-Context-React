@@ -11,4 +11,7 @@
         color: $main-color;
         cursor: pointer;
     }
+    &:disabled{
+        cursor:not-allowed;
+    }
 }

@@ -1,23 +1,23 @@
 import React, {useContext} from 'react';
-//import our context provider
+//import our Context Provider
 import { ProductsContext } from '../ProductsContext';
-//importing our components
-import ProductItem from './ProductItem';
+//import our components
+import CartItem from './CartItem';
 
-const ProductsContainer = () => {
+const CartContainer = () => {
     //bind our context state with this component
     const [products, setProducts, cartItems, setCartItems] = useContext(ProductsContext);
+
     return(
-        <div className='productsSection'>
-            {products.map( item => (
-                <ProductItem 
-                    key={item.id} 
+        <div className='cartSection'>
+            {cartItems.map( item => (
+                <CartItem
+                    key={item.id}
                     id={item.id}
                     name={item.name}
                     price={item.price}
-                    desc={item.description}
+                    amount={item.amount}
                     img={item.img}
-                    isItemInCart={item.isItemInCart}
                     products={products}
                     setProducts={setProducts}
                     cartItems={cartItems}
@@ -28,4 +28,4 @@ const ProductsContainer = () => {
     );
 }
 
-export default ProductsContainer;
+export default CartContainer;
