@@ -2,4 +2,25 @@ nav{
     min-height: 10vh;
     width: 100%;
     @include flex(row, space-evenly, center);
+    background: $main-color;
+    a{
+        color: $secondary-color;
+        transition: $transition;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
+
+.cartNav--annotation{
+    position: relative;
+    span{
+        position: absolute;
+        top: -10%;
+        right: -40%;
+        transform: translate(10%,-40%);
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+        background: $main-color;
+    }
 }

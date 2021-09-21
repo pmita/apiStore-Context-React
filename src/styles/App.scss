@@ -11,8 +11,20 @@
 @import './base/global';
 
 .App{
-    background: red;
+    min-height: 100vh;
+    width: 100%;
 }
 
 //importing our components' styling
 @import './component/Navigation';
+@import './component/ProductsContainer';
+@import './component/ProductItem';
+@import './component/cartContainer';
+@import './component/CartItem';
+
+//miscelleneous styling
+@import './component/miscelleneous';
+
+//import our pages' styling
+@import './pages/Products';
+@import './pages/Cart';
